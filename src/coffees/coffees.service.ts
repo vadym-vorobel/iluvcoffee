@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { Coffee } from './entities/coffee.entity'
 
 @Injectable()
@@ -48,7 +48,7 @@ export class CoffeesService {
     if (coffeeIndex === -1) {
       throw new NotFoundException(`Coffee #${id} not found`)
     }
-    
+
     if (coffeeIndex > -1) {
       this.coffees.splice(coffeeIndex, 1)
     }
